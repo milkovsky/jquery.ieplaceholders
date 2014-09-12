@@ -100,26 +100,4 @@
     };
   }
 
-  Drupal.behaviors.iePlaceholders = {
-    attach: function(context, settings) {
-      var include = settings.ie_placeholders.include;
-      $(include, context).each(function() {
-
-        var input = $(this);
-        var form = input.closest('form');
-        var label = form.find('label[for=' + this.id + ']');
-        // Clone label
-        var labelClone = jQuery.extend({}, label);
-        labelClone.find('.form-required').remove();
-        // Set placeholder text from label.
-        if (input.attr('placeholder') == undefined || input.attr('placeholder') == '') {
-          input.attr('placeholder', $.trim(labelClone.text()));
-          label.hide();
-        }
-
-        input.iePlaceholder();
-      });
-    }
-  };
-
 })(jQuery);
