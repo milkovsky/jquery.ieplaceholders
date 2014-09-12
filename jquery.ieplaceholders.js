@@ -9,17 +9,15 @@
     var isInputSupported = 'placeholder' in document.createElement('input');
     var isTextareaSupported = 'placeholder' in document.createElement('textarea');
     // Exit execution for normal browsers.
-    var text = input.attr('placeholder');
     if (isInputSupported && isTextareaSupported && !isOperaMini) {
-      //return;
-      input.attr('placeholder', '');
+      return;
     }
 
     input.parrent = input.parent();
     input.parrent.addClass('placeholder-parrent');
 
     // Prepare placeholder.
-
+    var text = input.attr('placeholder');
     input.placeholder = $("<div/>", {
       'class': 'placeholder-overlay',
       'text': text
