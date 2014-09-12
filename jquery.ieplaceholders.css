@@ -1,0 +1,11 @@
+.placeholder-parrent {
+  position: relative;
+}
+.placeholder-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.placeholder-overlay.highlighted {
+  color: #b1b3b4;
+}
